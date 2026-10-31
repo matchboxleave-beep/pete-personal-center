@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pete-personal-center
+    runtime: static
+    buildCommand: echo 'Static PWA - no build needed'
+    staticPublishPath: .
+    headers:
+      - path: /sites.json
+        name: Cache-Control
+        value: no-store
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
